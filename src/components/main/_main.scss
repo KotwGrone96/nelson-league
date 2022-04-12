@@ -1,0 +1,299 @@
+//------------------------------------------------------------------------------------------------
+//----------------------HOME PAGE-----------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+main {
+  width: 100%;
+  .home-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    text-align: center;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+  }
+  .home-image {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 3em;
+
+    background-color: $lolYellow;
+    padding: 0.5em;
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+
+  //------------------------------------------------------------------------------------------------
+  //----------------------CARD CHAMPIONS PAGE-------------------------------------------------------
+  //-------------------------------------------------------------------------------------------------
+  .filter-container {
+    width: 100%;
+    @include displayFlex(center, center);
+    flex-direction: column;
+    .input {
+      margin: 0.5em;
+      width: 200px;
+      input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5em 1em;
+        outline: none;
+        border: none;
+        background-color: $white;
+        color: $textBlack;
+        border-radius: 7px;
+        border: 1px solid $textGray;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        &::placeholder {
+          color: $textGray;
+        }
+      }
+    }
+    .dropdown-tags {
+      width: 200px;
+      height: 30px;
+      background-color: $white;
+      border-radius: 7px;
+      border: 1px solid $textGray;
+      position: relative;
+      cursor: pointer;
+      margin: 0.5em;
+      @include displayFlex(center, center);
+      p {
+        font-size: 1rem;
+        font-style: normal;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .tags {
+        @include positionAbsoluteTopLeft(30px, 0, 500);
+        width: 0;
+        display: none;
+        background-color: $bodyBackgroundColor;
+        border: 1px solid #000;
+        border-top: none;
+        span {
+          width: 100%;
+          text-align: center;
+          padding: 0.5em 0;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:hover {
+            background-color: $textGray;
+          }
+        }
+      }
+      .menu-active {
+        width: 100%;
+        @include displayFlex(center, center);
+        flex-direction: column;
+      }
+    }
+  }
+
+  .card-container {
+    @include displayFlex(space-evenly, center);
+    flex-wrap: wrap;
+    .card {
+      width: 175px;
+      background-color: #000;
+      margin: 1em 0.5em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: border-radius 0.5s;
+      &:hover {
+        background-color: #c28f2c;
+        border-radius: 0 0 50px 50px;
+        .card-avatar {
+          img {
+            transform: scale(1.25);
+          }
+        }
+      }
+      .card-avatar {
+        width: 90%;
+        margin: 0.5em auto;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          transform: scale(1.1);
+          transition: transform 0.5s;
+        }
+      }
+      .card-title {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 0.1em 0 1em;
+        font-family: "Beaufort for LOL", sans-serif;
+        font-style: italic;
+        text-transform: uppercase;
+        color: $white;
+      }
+    }
+  }
+  .champ-container {
+    margin-top: 100px;
+  }
+
+  //------------------------------------------------------------------------------------------------
+  //----------------------DOWNLOAD PAGE-------------------------------------------------------
+  //-------------------------------------------------------------------------------------------------
+  .download-container {
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    .lol-wall {
+      width: 100%;
+      max-width: 500px;
+      height: 250px;
+      margin: 1em auto;
+      border-radius: 30px;
+      overflow: hidden;
+      background-color: #c28f2c;
+      padding: 0.3em;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+    }
+    .links {
+      width: 100%;
+      margin: 2em 0 1em;
+      h2 {
+        font-size: 1.5rem;
+        color: $textBlack;
+        font-style: italic;
+      }
+      .lol-link {
+        margin: 1em auto;
+        width: 150px;
+        height: 50px;
+        background-color: $borderBlue;
+        border-radius: 25px;
+        @include displayFlex(center, center);
+        a {
+          color: $textGray;
+          text-transform: uppercase;
+          width: 100%;
+          height: 100%;
+          @include displayFlex(center, center);
+          font-weight: 700;
+          letter-spacing: 3px;
+        }
+        &:hover {
+          background-color: $blueBackgroundColor;
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+    h3 {
+      font-size: 2rem;
+      padding: 1em 0;
+    }
+    .other-links {
+      width: 100%;
+      @include displayFlex(center, center);
+      flex-direction: column;
+      .link {
+        @include displayFlex(center, center);
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        border-radius: 25px;
+        margin: 1em 0;
+        overflow: hidden;
+        a {
+          width: 100%;
+          height: 100%;
+          @include displayFlex(center, center);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    .card-container {
+      padding: 0 1em;
+      .card {
+        width: 200px;
+      }
+    }
+    .home-container,
+    .download-container {
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    .lol-wall {
+      height: 350px;
+      max-width: 700px;
+    }
+    .download-container {
+      .other-links {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 1em;
+        grid-row-gap: 2em;
+        grid-auto-flow: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-items: center;
+        .link {
+          margin: 0;
+          max-width: 600px;
+          height: 300px;
+        }
+      }
+
+      .valorant,
+      .tft {
+        grid-column: span 3;
+      }
+
+      .lor,
+      .ruined {
+        grid-column: span 3;
+      }
+      .wild {
+        grid-column: 2/6;
+      }
+      .hextech,
+      .conver,
+      .nunu {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  main {
+    .filter-container {
+      flex-direction: row;
+      height: 100px;
+    }
+  }
+}

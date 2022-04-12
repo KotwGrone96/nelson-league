@@ -1,0 +1,41 @@
+.banner__container {
+  width: 100%;
+  height: 600px;
+  margin-top: 160px;
+  position: relative;
+  background-color: $blackBackgroundColor;
+  .sylas {
+    @include positionAbsoluteBottomLeft(0, 0, 100);
+    width: 100%;
+    height: 125%;
+    max-height: 700px;
+    object-fit: cover;
+    animation: sylas 2s;
+  }
+  .summonersRift {
+    @include positionAbsoluteBottomLeft(0, 0, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px) saturate(1) brightness(70%) contrast(125%);
+    animation: summonersRift 3s;
+  }
+}
+
+@keyframes sylas {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes summonersRift {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

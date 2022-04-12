@@ -1,0 +1,56 @@
+@import './sass/colors';
+@import './sass/mixins';
+
+@font-face {
+  font-family: 'Beaufort for LOL';
+  src: url('./fonts/Beaufort\ for\ LOL\ Bold.ttf');
+}
+@font-face {
+  font-family: 'Spiegel';
+  src: url('./fonts/Spiegel.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Spiegel', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  background-color: $bodyBackgroundColor;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 1em 0;
+  text-transform: uppercase;
+  font-family: 'Beaufort for LOL', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+p {
+  font-size: 1.2rem;
+  color: $textBlack;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+@import './components/header/header';
+@import './components//banner/banner';
+@import './components//main/main';
+@import './components//footer//footer';
+@import './Pages/Champ';

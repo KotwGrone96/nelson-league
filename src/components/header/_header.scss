@@ -1,0 +1,181 @@
+header {
+  width: 100%;
+  max-width: 1440px;
+  height: 80px;
+  background-color: $headerBackgroundColor;
+  position: fixed;
+  z-index: 900;
+  top: -1px;
+  .header {
+    display: none;
+  }
+  .responsive__header {
+    @include displayFlex(space-around, center);
+    height: 100%;
+    figure {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+      .riot-logo {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(198deg)
+          brightness(109%) contrast(101%);
+      }
+      .riot-logo,
+      .lol-logo {
+        transform: scale(1.4);
+      }
+      .menu {
+        filter: brightness(500%);
+        height: 30%;
+      }
+    }
+    .fig__menu {
+      @include displayFlex(center, center);
+      background-color: $blackTargetColor;
+      width: 45px;
+      height: 45px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    .responsive__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      color: $white;
+      width: 100%;
+      height: 110vh;
+      background-color: $blackBackgroundColor;
+      margin-left: 100%;
+      transition: margin 0.5s;
+
+      .icons {
+        width: 100%;
+        height: 80px;
+        @include displayFlex(space-between, center);
+        figure {
+          height: 100%;
+          img {
+            height: 100%;
+          }
+          .close {
+            filter: brightness(500%);
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .icons__fig__lol {
+          margin-left: 2em;
+          .lol-logo {
+            transform: scale(1.4);
+          }
+        }
+        .icons__fig__close {
+          @include displayFlex(center, center);
+          background-color: $blackTargetColor;
+          width: 45px;
+          height: 45px;
+          border-radius: 15px;
+          margin-right: 2.1em;
+          cursor: pointer;
+        }
+      }
+      .nav {
+        width: 100%;
+        @include displayFlex(center, center);
+        flex-direction: column;
+        a {
+          width: 85%;
+          margin: 1em auto;
+          padding: 1em 0;
+          padding-left: 1em;
+          color: $white;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1rem;
+          border-radius: 15px;
+          cursor: pointer;
+          &:hover {
+            background-color: $blackTargetColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    .responsive__header {
+      display: none;
+    }
+    .header {
+      @include displayFlex(center, center);
+      position: relative;
+      height: 100%;
+      .header__img {
+        height: 100%;
+        width: max-content;
+        @include positionAbsoluteTopLeft(0, 1em, 1000);
+        @include displayFlex(center, center);
+        figure {
+          height: 100%;
+          margin: 0 0.5em;
+          img {
+            height: 100%;
+          }
+          .riot-logo {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(198deg)
+              brightness(109%) contrast(101%);
+            transform: scale(1.4);
+            &:hover {
+              filter: invert(26%) sepia(68%) saturate(7065%) hue-rotate(353deg)
+                brightness(94%) contrast(128%);
+              cursor: pointer;
+            }
+          }
+          .lol-icon {
+            transform: scale(0.5);
+            cursor: pointer;
+          }
+        }
+      }
+      .nav {
+        height: 100%;
+        @include displayFlex(center, center);
+        div {
+          height: 100%;
+          padding: 0 1em;
+          @include displayFlex(center, center);
+          position: relative;
+          text-align: center;
+          &:hover {
+            &::before {
+              content: '';
+              @include positionAbsoluteTopLeft(0, 0, 100);
+              width: 100%;
+              height: 70px;
+              transform: scaleX(0.8);
+              border-bottom: 5px solid $borderBlue;
+            }
+          }
+          a {
+            position: relative;
+            z-index: 200;
+            color: $white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.7em 1em;
+            border-radius: 15px;
+            font-family: Arial, sans-serif;
+            &:hover {
+              background-color: $blackTargetColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

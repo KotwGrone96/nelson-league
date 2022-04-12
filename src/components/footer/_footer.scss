@@ -1,0 +1,55 @@
+footer {
+  width: 100%;
+  padding: 1em 0 2em;
+  background-color: $blackTargetColor;
+  color: $textGray;
+  @include displayFlex(space-evenly, center);
+  flex-direction: column;
+  text-align: center;
+  h2 {
+    padding: 1em 0;
+    font-size: 1.2rem;
+  }
+  .social {
+    @include displayFlex(center, center);
+    width: 100%;
+    margin: 0.5em 0;
+    figure {
+      border-radius: 50%;
+      margin: 0 1em;
+      width: 50px;
+      height: 50px;
+      background-color: $textBlack;
+      @include displayFlex(center, center);
+      a {
+        @include displayFlex(center, center);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        img {
+          width: 50%;
+          height: 50%;
+          filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(178deg)
+            brightness(104%) contrast(102%);
+        }
+      }
+    }
+  }
+  .text {
+    line-height: 2em;
+    font-style: italic;
+    letter-spacing: 3px;
+    margin: 0.5em 0;
+    h3 {
+      span {
+        color: #f00;
+      }
+    }
+    a {
+      color: #fff;
+      &:hover {
+        color: #f00;
+      }
+    }
+  }
+}
